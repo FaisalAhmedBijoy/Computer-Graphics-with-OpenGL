@@ -14,7 +14,7 @@ Roll: 1607048
 using namespace std;
 
 double Txval=0,Tyval=0,Tzval=0;
-double windowHeight=700, windowWidth=700;
+double windowHeight=1000, windowWidth=800;
 GLfloat theta = 0.0, axis_x=0.0, axis_y=0.0;
 GLboolean bRotate = false, uRotate = false;
 
@@ -62,7 +62,7 @@ void axes()
     float length = 10;
     float width = 1;
 
-    // X-axis
+    // x-axis
     glPushMatrix();
     glTranslatef(length/2,0,0);
     glScalef(length,width,width);
@@ -70,7 +70,7 @@ void axes()
     cube(1.0,0.1,0.1);
     glPopMatrix();
 
-    // Y-axis
+    // y-axis
     glPushMatrix();
     glTranslatef(0,length/2,0);
     glScalef(width,length,width);
@@ -78,7 +78,7 @@ void axes()
     cube(0.1,1.0,0.1);
     glPopMatrix();
 
-    // Z-axis
+    // z-axis
     glPushMatrix();
     glTranslatef(0,0,length/2);
     glScalef(width,width,length);
@@ -293,12 +293,13 @@ void display_setting()
 
     glMatrixMode( GL_PROJECTION );
     glLoadIdentity();
-    glFrustum(-5,5,-5,5, 4, 70);
+    // xmin, xmax, ymin, ymax, near, far
+    glFrustum(-5,5,-5,5, 4, 100);
 
     glMatrixMode( GL_MODELVIEW );
     glLoadIdentity();
     // eye, look, head
-    gluLookAt(10,10,40, 1,5,1, 0,1,0);
+    gluLookAt(0,10,40, 0,0,0, 0,1,0);
 
     glViewport(0, 0, windowHeight, windowWidth);
     glRotatef(theta,axis_x,axis_y,0);
@@ -308,8 +309,11 @@ void display(void)
 {
     display_setting();
 
-    axes();
+    //axes();
+    glPushMatrix();
+    glTranslatef(0,-1,0);
     wall_floor();
+    glPopMatrix();
     weardrobe();
     //table();
     //chair();
@@ -396,7 +400,7 @@ int main(int argc, char**argv)
     glutInit(&argc,argv);
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
     glutInitWindowPosition(200,200);
-    glutInitWindowSize(700,700);
+    glutInitWindowSize(windowHeight,windowWidth);
     glutCreateWindow("Classroom 3D: 1607048");
 
     cout<<"--------------------------"<<endl;
