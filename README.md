@@ -7,4 +7,5 @@ Design and development Computer Graphics system using OpenGL with C++
 - Project: Design a Cube using 6 Rectangle
 - Design Table using Cube
 - Design Rotating Table
-- Lighting: Normal light and specular light
+- Design 3D cClassroom with Furniture 
+- Lighting: Normal Light and Specular Light
