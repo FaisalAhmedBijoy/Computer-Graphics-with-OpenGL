@@ -26,7 +26,7 @@ Design and development Computer Graphics system using OpenGL with C++
 - Project 1: Design a Cube using 6 Rectangle
 - Project 2: Design 3D Classroom with Furniture
 - Project 3: Design 3D Classroom with Lighting Properties
-- Project 4: Design 3D Earth using Beizer Curved Surface 
+- Project 4: Design 3D Earth using Beizer Curved Surface (My Youtube Video: https://www.youtube.com/watch?v=SQO9Bpbqs_4 ) 
 
 <h1>Snapshot of Projects</h1>
 
